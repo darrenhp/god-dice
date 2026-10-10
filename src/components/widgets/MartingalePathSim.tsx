@@ -184,12 +184,12 @@ export const MartingalePathSim: React.FC = () => {
       ) : (
         <div className="rounded-lg border border-slate-800 bg-slate-950/50 p-4 text-xs text-slate-300">
           <span className="font-semibold text-emerald-400">停时定理 (Doob's Optional Stopping Theorem)</span>
-          <p className="mt-1 text-slate-400">
-            若 (X_n) 是鞅，T 是停时，并在以下条件之一成立时严格满足 E[X_T] = E[X_0]：
-            1. 停时 T 有界（存在常数 M 使得 T ≤ M）；
-            2. E[T] &lt; ∞ 且单步增量 |X_{'{n+1}'} - X_n| 有界；
-            3. X_n 是一致可积的。
-          </p>
+          <div className="mt-1 space-y-1 text-slate-400">
+            <p>若 (X_n) 是鞅，T 是停时，并在以下条件之一成立时严格满足 E[X_T] = E[X_0]：</p>
+            <p>1. 停时 T 有界（存在常数 M 使得 T ≤ M）；</p>
+            <p>2. E[T] &lt; ∞ 且单步增量 |X_(n+1) - X_n| 有界；</p>
+            <p>3. X_n 是一致可积的 (Uniformly Integrable)。</p>
+          </div>
         </div>
       )}
     </div>

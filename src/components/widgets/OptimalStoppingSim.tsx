@@ -205,7 +205,7 @@ export const OptimalStoppingSim: React.FC = () => {
             </div>
 
             <div className="mt-4 text-[11px] text-slate-400">
-              递推方程：V_k = (1/6) ∑ max(d, V_{'{k-1}'})。因为掷骰代价为零，更多机会单调增加收益期望，但边际收益迅速衰减！
+              递推方程：<span className="font-mono text-emerald-400">V_k = (1/6) · ∑ max(d, V_k-1)</span>。因为掷骰代价为零，更多机会单调增加收益期望，但边际收益迅速衰减！
             </div>
           </div>
         </div>

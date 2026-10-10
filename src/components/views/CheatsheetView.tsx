@@ -1,7 +1,7 @@
 import React, { useState } from 'react';
 import { MINDMAP_RULES, MindmapRule } from '../../data/cheatsheet';
 import { VERIFICATION_LIST } from '../../lib/verification';
-import { LatexFormula } from '../common/LatexFormula';
+import { LatexFormula, MathText } from '../common/LatexFormula';
 import { Compass, BookMarked, Filter } from 'lucide-react';
 
 export const CheatsheetView: React.FC = () => {
@@ -97,7 +97,7 @@ export const CheatsheetView: React.FC = () => {
                 {filteredRules.map((rule, idx) => (
                   <tr key={idx} className="transition-colors hover:bg-slate-800/30">
                     <td className="py-3 px-3 font-medium text-white max-w-xs">
-                      {rule.triggerPattern}
+                      <MathText text={rule.triggerPattern} />
                     </td>
                     <td className="py-3 px-3">
                       <span
@@ -109,7 +109,7 @@ export const CheatsheetView: React.FC = () => {
                       </span>
                     </td>
                     <td className="py-3 px-3 text-slate-300 max-w-sm">
-                      {rule.recommendedMethod}
+                      <MathText text={rule.recommendedMethod} />
                     </td>
                     <td className="py-3 px-3 font-mono text-emerald-400">
                       <LatexFormula math={rule.closedFormLatex} />

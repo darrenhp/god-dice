@@ -1,6 +1,6 @@
 import React, { useState } from 'react';
 import { PROBLEMS_DATA, Problem } from '../../data/problems';
-import { LatexFormula } from '../common/LatexFormula';
+import { LatexFormula, MathText } from '../common/LatexFormula';
 import { Search, ExternalLink, ChevronDown, ChevronUp } from 'lucide-react';
 
 export const ProblemBankView: React.FC = () => {
@@ -155,9 +155,9 @@ export const ProblemBankView: React.FC = () => {
 
               {/* Collapsed short hint */}
               {!isExpanded && (
-                <p className="mt-3 text-xs text-slate-400 line-clamp-1">
-                  💡 核心洞察：{prob.coreInsight}
-                </p>
+                <div className="mt-3 text-xs text-slate-400 line-clamp-1">
+                  💡 核心洞察：<MathText text={prob.coreInsight} />
+                </div>
               )}
 
               {/* Expanded details */}
@@ -172,16 +172,16 @@ export const ProblemBankView: React.FC = () => {
 
                   <div>
                     <h4 className="font-bold text-white">【上帝视角核心洞察】</h4>
-                    <p className="mt-1 leading-relaxed text-slate-300">
-                      {prob.coreInsight}
-                    </p>
+                    <div className="mt-1 leading-relaxed text-slate-300">
+                      <MathText text={prob.coreInsight} />
+                    </div>
                   </div>
 
                   <div>
                     <h4 className="font-bold text-white">【原创降维解法提要】</h4>
-                    <p className="mt-1 leading-relaxed text-slate-400">
-                      {prob.solutionSummary}
-                    </p>
+                    <div className="mt-1 leading-relaxed text-slate-400">
+                      <MathText text={prob.solutionSummary} />
+                    </div>
                   </div>
                 </div>
               )}

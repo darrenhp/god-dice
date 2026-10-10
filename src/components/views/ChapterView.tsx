@@ -2,7 +2,7 @@ import React, { useState } from 'react';
 import { CHAPTERS_DATA, ChapterData } from '../../data/curriculum';
 import { PROBLEMS_DATA, Problem } from '../../data/problems';
 import { WidgetRenderer } from '../widgets/WidgetRenderer';
-import { LatexFormula } from '../common/LatexFormula';
+import { LatexFormula, MathText } from '../common/LatexFormula';
 import { ArrowLeft, ArrowRight, BookOpen, ChevronRight, HelpCircle, ExternalLink } from 'lucide-react';
 
 interface ChapterViewProps {
@@ -105,9 +105,9 @@ export const ChapterView: React.FC<ChapterViewProps> = ({
               {currentChapter.subtitle}
             </p>
 
-            <p className="mt-4 text-xs leading-relaxed text-slate-400">
-              {currentChapter.summary}
-            </p>
+            <div className="mt-4 text-xs leading-relaxed text-slate-400">
+              <MathText text={currentChapter.summary} />
+            </div>
 
             {/* Key Formula Spotlight */}
             <div className="mt-6 rounded-lg border border-emerald-500/30 bg-emerald-950/20 p-4">
@@ -144,9 +144,9 @@ export const ChapterView: React.FC<ChapterViewProps> = ({
                   <span className="text-emerald-400 font-mono text-sm">{idx + 1}.</span>
                   {sec.heading}
                 </h2>
-                <p className="mt-3 text-sm leading-relaxed text-slate-300">
-                  {sec.content}
-                </p>
+                <div className="mt-3 text-sm leading-relaxed text-slate-300">
+                  <MathText text={sec.content} />
+                </div>
                 {sec.latexFormula && (
                   <div className="mt-4 rounded-md border border-slate-800 bg-slate-950/80 p-3">
                     <LatexFormula math={sec.latexFormula} block />
@@ -228,15 +228,15 @@ export const ChapterView: React.FC<ChapterViewProps> = ({
                           )}
                           <div>
                             <span className="font-semibold text-slate-300">核心洞察：</span>
-                            <p className="mt-0.5 text-slate-400 leading-relaxed">
-                              {prob.coreInsight}
-                            </p>
+                            <div className="mt-0.5 text-slate-400 leading-relaxed">
+                              <MathText text={prob.coreInsight} />
+                            </div>
                           </div>
                           <div>
                             <span className="font-semibold text-slate-300">降维题解：</span>
-                            <p className="mt-0.5 text-slate-400 leading-relaxed">
-                              {prob.solutionSummary}
-                            </p>
+                            <div className="mt-0.5 text-slate-400 leading-relaxed">
+                              <MathText text={prob.solutionSummary} />
+                            </div>
                           </div>
                         </div>
                       )}
