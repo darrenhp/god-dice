@@ -1,0 +1,7 @@
+{
+  "name": "GodDice · 上帝的骰子",
+  "description": "降维概率与算法指南：醉汉在微观里踉跄，上帝在宏观里守恒。用「拆、守恒、对称、倒放」四把上帝视角工具，降维打击期望与概率题。",
+  "requestFramePermissions": [],
+  "majorCapabilities": ["MAJOR_CAPABILITY_SERVER_SIDE_GEMINI_API"]
+}
+
